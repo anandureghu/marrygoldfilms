@@ -37,12 +37,50 @@ const secondary = Fustat({
   subsets: ["latin"],
 });
 
-export const metadata: Metadata = {
-  title: "anandureghu",
+export const metadata = {
+  title: "Marry Gold Films | International Wedding Photography & Videography",
   description:
-    "A wizard who loves design and code. I tell stories through my designs and illustrations - Anandu Reghu",
+    "Marry Gold Films captures the pure joy and timeless beauty of weddings across the world. We weave love, emotion, and elegance into cinematic wedding stories that reflect your true essence. Relive your fairytale moments with authentic storytelling, grace, and artistic precision.",
+  keywords: [
+    "wedding photography",
+    "wedding videography",
+    "destination wedding films",
+    "luxury wedding cinematography",
+    "Marry Gold Films",
+    "international wedding photographers",
+    "candid wedding photography",
+    "wedding stories",
+    "bride and groom photography",
+    "cinematic wedding films",
+    "engagement shoot",
+    "pre-wedding shoot",
+  ],
+  authors: [{ name: "Marry Gold Films Team" }],
+  openGraph: {
+    title: "Marry Gold Films | Where Love Meets Art",
+    description:
+      "International wedding photography & videography company crafting timeless, emotion-filled memories. Capture your love story with elegance, grace, and magic.",
+    url: "https://marrygoldfilms.vercel.app",
+    siteName: "Marry Gold Films",
+    images: [
+      {
+        url: "/marrygoldfilms.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Marry Gold Films – Wedding Photography & Cinematic Stories",
+      },
+    ],
+    locale: "en_IN",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Marry Gold Films | Wedding Photography & Cinematic Stories",
+    description:
+      "Capture your wedding story with Marry Gold Films — timeless, elegant, and emotion-filled photography and videography for your fairytale moments.",
+    images: ["/marrygoldfilms.jpg"],
+  },
 };
-
 export default function RootLayout({
   children,
 }: Readonly<{
