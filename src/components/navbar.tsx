@@ -1,0 +1,27 @@
+import Image from "next/image";
+import React from "react";
+
+const Navbar = () => {
+  return (
+    <nav className="py-3 fixed top-0 left-0 w-full z-20">
+      <div className=" app-container mx-auto flex items-center justify-between">
+        <main className="flex items-center text-primary-50 gap-3">
+          <Image
+            src={"/marrygoldfilms.jpg"}
+            alt="marrygoldfilms"
+            width={50}
+            height={50}
+            className="rounded"
+          />
+          <h1 className="text-3xl font-costaline">Marry Gold Films</h1>
+        </main>
+        <ul className="flex text-primary-50/70 gap-3">
+          <li>Gallery</li>
+          <li>Contact</li>
+        </ul>
+      </div>
+    </nav>
+  );
+};
+
+export default Navbar;
