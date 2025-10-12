@@ -1,12 +1,5 @@
 import type { Metadata } from "next";
-import {
-  Fredoka,
-  Fustat,
-  Handlee,
-  Lustria,
-  Miss_Fajardose,
-  Playfair_Display,
-} from "next/font/google";
+import { Fredoka, Fustat, Lustria, Miss_Fajardose } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/navbar";
 
@@ -37,7 +30,7 @@ const secondary = Fustat({
   subsets: ["latin"],
 });
 
-export const metadata = {
+export const metadata: Metadata = {
   title: "Marry Gold Films | International Wedding Photography & Videography",
   description:
     "Marry Gold Films captures the pure joy and timeless beauty of weddings across the world. We weave love, emotion, and elegance into cinematic wedding stories that reflect your true essence. Relive your fairytale moments with authentic storytelling, grace, and artistic precision.",

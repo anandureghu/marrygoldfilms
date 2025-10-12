@@ -42,7 +42,7 @@ const LandingServices = () => {
           return (
             <div
               key={service.title}
-              className="group relative bg-white rounded-sm overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 p-2"
+              className="group relative bg-primary-200 rounded-sm overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 p-2"
             >
               <div className="relative aspect-[4/3] w-full overflow-hidden">
                 <Image
@@ -52,7 +52,7 @@ const LandingServices = () => {
                   className="object-cover transition-transform duration-500 group-hover:scale-105"
                 />
               </div>
-              <h2 className="pt-3 px-2 text-xl font-secondary font-medium text-primary-600">
+              <h2 className="pt-6 pb-2 px-2 text-xl font-secondary font-medium text-primary-600">
                 {service.title}
               </h2>
             </div>
