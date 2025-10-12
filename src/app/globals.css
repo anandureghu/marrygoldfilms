@@ -116,7 +116,7 @@
   }
 
   .app-container {
-    @apply max-w-[1200px] max-md:max-w-[600px] max-sm:max-w-[350px] mx-auto;
+    @apply max-w-[1200px] max-xl:max-w-[1000px] max-lg:max-w-[900px] max-md:max-w-[600px] max-sm:max-w-[350px] mx-auto;
   }
 
   .glass {
@@ -125,6 +125,8 @@
     -webkit-backdrop-filter: blur(50px);
     position: relative;
     overflow: hidden;
+    will-change: backdrop-filter; /* hint for better performance */
+    transform: translateZ(0); /* force GPU rendering */
   }
 
   .glass::after {
@@ -140,6 +142,7 @@
       rgba(255, 255, 255, 0.2),
       transparent
     );
+    pointer-events: none;
   }
 
   /* Hide scrollbar for Chrome, Safari, and Opera */

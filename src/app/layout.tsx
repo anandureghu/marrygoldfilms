@@ -51,7 +51,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`relative ${body.variable} ${highlight.variable} ${secondary.variable} ${missFajardose.variable} antialiased font-body mx-auto`}
+        className={`relative ${body.variable} ${highlight.variable} ${secondary.variable} ${missFajardose.variable} antialiased font-body mx-auto bg-primary-200 text-primary-900`}
       >
         <Navbar />
         {children}

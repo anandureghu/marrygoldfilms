@@ -1,10 +1,11 @@
+import { BRAND_NAME } from "@/utils/consts";
 import Image from "next/image";
 import React from "react";
 
 const Navbar = () => {
   return (
     <nav className="py-3 fixed top-0 left-0 w-full z-20">
-      <div className=" app-container mx-auto flex items-center justify-between">
+      <div className=" app-container mx-auto flex items-center justify-between glass p-3 px-5 rounded-xl backdrop-blur-md">
         <main className="flex items-center text-primary-50 gap-3">
           <Image
             src={"/marrygoldfilms.jpg"}
@@ -13,7 +14,7 @@ const Navbar = () => {
             height={50}
             className="rounded"
           />
-          <h1 className="text-3xl font-costaline">Marry Gold Films</h1>
+          <h1 className="text-3xl font-costaline">{BRAND_NAME}</h1>
         </main>
         <ul className="flex text-primary-50/70 gap-3">
           <li>Gallery</li>

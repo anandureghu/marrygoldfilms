@@ -1,3 +1,4 @@
+import { BRAND_NAME } from "@/utils/consts";
 import React from "react";
 
 const LandingHeader = () => {
@@ -13,7 +14,7 @@ const LandingHeader = () => {
       <main className="relative z-10 app-container flex items-start justify-center w-full h-dvh flex-col">
         <h1 className="text-primary-50 text-6xl font-costaline tracking-wider leading-snug">
           Capture Life&apos;s <br /> Moments With <br />{" "}
-          <strong>Marry Gold Films</strong>
+          <strong>{BRAND_NAME}</strong>
         </h1>
         <div className="w-full flex flex-col items-end justify-center">
           <div className="text-primary-50/70 text-lg">
