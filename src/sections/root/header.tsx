@@ -1,4 +1,5 @@
 import { BRAND_NAME } from "@/utils/consts";
+import { PHOTOS } from "@/utils/consts/photos";
 import React from "react";
 
 const LandingHeader = () => {
@@ -7,8 +8,7 @@ const LandingHeader = () => {
       <div
         className="absolute w-full h-full top-0 left-0 bg-cover"
         style={{
-          backgroundImage:
-            "linear-gradient(to bottom, rgba(0,0,0,0.7), rgba(0,0,0,0.4)), url(https://images.pexels.com/photos/2959196/pexels-photo-2959196.jpeg)",
+          backgroundImage: `linear-gradient(to bottom, rgba(0,0,0,0.7), rgba(0,0,0,0.4)), url('${PHOTOS.HEADER}')`,
         }}
       />
       <main className="relative z-10 app-container flex items-start justify-center w-full h-dvh flex-col">

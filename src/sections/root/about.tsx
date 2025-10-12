@@ -1,4 +1,5 @@
 import { BRAND_NAME } from "@/utils/consts";
+import { VIDEOS } from "@/utils/consts/video";
 import React from "react";
 
 const LandingAbout = () => {
@@ -34,10 +35,7 @@ const LandingAbout = () => {
           loop
           className="flex-1 w-1/2 h-auto max-lg:w-3/4 max-lg:mx-auto max-lg:mt-4 max-md:w-full"
         >
-          <source
-            src="https://www.pexels.com/download/video/8776126/"
-            type="video/mp4"
-          />
+          <source src={VIDEOS.ABOUT_US} type="video/mp4" />
           Your browser does not support the video tag.
         </video>
       </main>
