@@ -10,7 +10,7 @@ const highlights = [
 
 const LandingHighlights = () => {
   return (
-    <section className="border-y border-primary-500 py-20">
+    <section className="border-t border-accent-300 py-20">
       <div className="app-container">
         <div className="grid grid-cols-2 md:grid-cols-4 max-md:gap-10 gap-3 text-left">
           {highlights.map((highlight) => (

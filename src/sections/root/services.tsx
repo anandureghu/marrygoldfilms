@@ -52,7 +52,7 @@ const LandingServices = () => {
                   className="object-cover transition-transform duration-500 group-hover:scale-105"
                 />
               </div>
-              <h2 className="pt-6 pb-2 px-2 text-xl font-secondary font-medium text-primary-600">
+              <h2 className="pt-6 pb-2 px-2 text-xl font-highlight font-medium text-primary-600">
                 {service.title}
               </h2>
             </div>
