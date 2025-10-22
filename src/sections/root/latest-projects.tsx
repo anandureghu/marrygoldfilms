@@ -24,7 +24,7 @@ const LandingLatestProjects = () => {
     <section className="bg-[#6b6054] py-16 text-white relative overflow-hidden">
       <div className="app-container">
         {/* Header */}
-        <div className="flex justify-between items-center mb-6">
+        <div className="flex justify-between items-center mb-6 max-md:flex-col gap-3">
           <h2 className="text-3xl font-semibold font-costaline">
             Our Latest Projects
           </h2>
@@ -51,26 +51,30 @@ const LandingLatestProjects = () => {
       {/* Projects Slider */}
       <div
         ref={scrollRef}
-        className="flex overflow-x-auto scroll-smooth scrollbar-hide no-scrollbar ml-[10%] pr-[10%]"
+        className="flex overflow-x-auto scroll-smooth scrollbar-hide no-scrollbar ml-[10%]"
       >
         {LATEST_PROJECTS.map((project, i) => (
           <div
             key={project.id}
-            className={cn(
-              "relative overflow-hidden transition-all duration-500 transform group",
-              active == i ? "min-w-[600px] z-20" : "min-w-[300px] z-10"
-            )}
             onMouseEnter={() => setActive(i)}
+            onTouchStart={() => setActive(i)}
+            className={cn(
+              "relative overflow-hidden transition-all duration-500 transform",
+              // 👇 Responsive widths
+              "min-w-[80vw] sm:min-w-[60vw] md:min-w-[400px] lg:min-w-[300px]",
+              active === i && "md:min-w-[500px] lg:min-w-[600px] z-20"
+            )}
           >
-            {/* Shadow Layer on Left Side */}
+            {/* Left Shadow Layer */}
             <div className="absolute left-0 top-0 h-full w-12 bg-gradient-to-r from-black/40 to-transparent z-10 pointer-events-none" />
 
+            {/* Image */}
             <Image
               src={project.image}
               alt={project.title}
-              width={400}
-              height={500}
-              className="object-cover w-full h-[450px] transition-transform duration-500 group-hover:scale-105"
+              width={600}
+              height={450}
+              className="object-cover w-full h-[400px] sm:h-[420px] md:h-[450px]"
             />
 
             {/* Overlay */}
@@ -87,6 +91,9 @@ const LandingLatestProjects = () => {
           </div>
         ))}
       </div>
+
+      {/* Left fade overlay */}
+      <div className="absolute left-0 top-0 h-full w-20 bg-gradient-to-r from-[#6b6054] to-transparent pointer-events-none" />
     </section>
   );
 };
