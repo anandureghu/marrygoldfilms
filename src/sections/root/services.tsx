@@ -1,33 +1,6 @@
-import { PHOTOS } from "@/utils/consts/photos";
+import { SERVICES } from "@/utils/consts";
 import Image from "next/image";
 import React from "react";
-
-const services = [
-  {
-    title: "Weddings & Engagements",
-    image: PHOTOS.OUR_SERVICES[0],
-  },
-  {
-    title: "Family Portraits",
-    image: PHOTOS.OUR_SERVICES[1],
-  },
-  {
-    title: "Maternity & Newborns",
-    image: PHOTOS.OUR_SERVICES[2],
-  },
-  {
-    title: "Corporate Photography",
-    image: PHOTOS.OUR_SERVICES[3],
-  },
-  {
-    title: "Real Estate Photography",
-    image: PHOTOS.OUR_SERVICES[4],
-  },
-  {
-    title: "Product & Commercial",
-    image: PHOTOS.OUR_SERVICES[5],
-  },
-];
 
 const LandingServices = () => {
   return (
@@ -38,7 +11,7 @@ const LandingServices = () => {
         </h1>
       </header>
       <main className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
-        {services.map((service) => {
+        {SERVICES.map((service) => {
           return (
             <div
               key={service.title}
