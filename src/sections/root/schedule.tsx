@@ -12,7 +12,7 @@ const LandingSchedule = () => {
       }}
     >
       <div className="app-container">
-        <header className="capitalize flex items-start justify-between gap-6 text-accent-800 text-shadow-2xl">
+        <header className="capitalize flex items-start flex-wrap mx-auto justify-between gap-6 text-accent-800 text-shadow-2xl">
           <h1 className="text-4xl font-costaline font-bold">
             schedule your <br />
             photography session
