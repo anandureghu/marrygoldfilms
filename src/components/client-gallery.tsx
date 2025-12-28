@@ -14,24 +14,21 @@ export default function ClientGallery({ images, title }: Props) {
 
   return (
     <>
-      <div className="columns-1 sm:columns-2 md:columns-3 lg:columns-4 gap-4">
-        {images.map((src, index) => (
+      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+        {images.map((src, i) => (
           <div
-            key={index}
-            className="mb-4 break-inside-avoid cursor-zoom-in"
-            onClick={() => setActiveIndex(index)}
+            key={i}
+            className="aspect-[3/4] overflow-hidden rounded-xl cursor-zoom-in"
+            onClick={() => setActiveIndex(i)}
           >
-            <Image
+            <img
               src={src}
-              alt={`${title} ${index + 1}`}
-              width={800}
-              height={1200}
-              className="w-full rounded-lg hover:opacity-90 transition"
+              alt=""
+              className="w-full h-full object-cover hover:opacity-90 transition"
             />
           </div>
         ))}
       </div>
-
       {activeIndex !== null && (
         <ImageLightbox
           images={images}
