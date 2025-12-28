@@ -17,7 +17,7 @@ const ClientDetailPage = async ({ params }: { params: { client: string } }) => {
     <div className="bg-black text-white min-h-screen">
       <BackButton />
 
-      <div className="app-container pt-[100px]">
+      <div className="app-container py-[100px]">
         <h1 className="font-costaline text-7xl mt-10 text-center mb-20">
           {clientName}
         </h1>
