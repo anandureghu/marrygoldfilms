@@ -1,5 +1,6 @@
 import LandingAbout from "@/sections/root/about";
 import LandingContact from "@/sections/root/contact";
+import Footer from "@/sections/root/footer";
 import LandingGallery from "@/sections/root/gallery";
 import LandingHeader from "@/sections/root/header";
 import LandingHighlights from "@/sections/root/highlights";
@@ -21,6 +22,7 @@ const Home = () => {
       <LandingHighlights />
       <LandingContact />
       <LandingSchedule />
+      <Footer />
     </main>
   );
 };

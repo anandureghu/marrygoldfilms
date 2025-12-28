@@ -3,9 +3,9 @@ import React from "react";
 
 const highlights = [
   { value: "5", label: "countries shot on" },
-  { value: "50", label: "successful works" },
-  { value: "30", label: "happy clients" },
-  { value: "5", label: "years of experience" },
+  { value: "100", label: "successful works" },
+  { value: "100", label: "happy clients" },
+  { value: "3", label: "years of experience" },
 ];
 
 const LandingHighlights = () => {

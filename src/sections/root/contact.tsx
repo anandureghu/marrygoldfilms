@@ -1,6 +1,7 @@
 import { PHOTOS } from "@/utils/consts/photos";
 import { CircleArrowRight, Sparkles } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 
 const LandingContact = () => {
@@ -17,9 +18,11 @@ const LandingContact = () => {
           <h1 className="text-primary-50 text-4xl md:text-5xl font-costaline font-bold leading-tight md:leading-[1.2] relative z-50 text-shadow-md">
             Contact us now <br /> to learn more
           </h1>
-          <button className="block bg-primary-950 p-3 px-7 mt-4 capitalize text-primary-50">
-            Contat now
-          </button>
+          <Link href={"#contact"}>
+            <button className="block bg-primary-950 p-3 px-7 mt-4 capitalize text-primary-50">
+              Contat now
+            </button>
+          </Link>
         </div>
 
         {/* Right image section */}

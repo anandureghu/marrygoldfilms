@@ -1,4 +1,5 @@
 import { SERVICES } from "@/utils/consts";
+import { cn } from "@/utils/utils";
 import Image from "next/image";
 import React from "react";
 
@@ -22,7 +23,10 @@ const LandingServices = () => {
                   src={service.image}
                   alt={service.title}
                   fill
-                  className="object-cover transition-transform duration-500 group-hover:scale-105"
+                  className={cn(
+                    "object-cover transition-transform duration-500 group-hover:scale-105",
+                    service.position
+                  )}
                 />
               </div>
               <h2 className="pt-6 pb-2 px-2 text-xl font-highlight font-medium text-primary-600">

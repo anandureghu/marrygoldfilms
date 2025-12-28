@@ -1,154 +1,177 @@
 "use client";
 
-import { PHOTOS } from "@/utils/consts/photos";
-import { Quote, ArrowRight, ArrowLeft } from "lucide-react";
-import Image from "next/image";
-import React, { useEffect, useState } from "react";
+import { Quote, ArrowLeft, ArrowRight } from "lucide-react";
+import { useEffect, useRef, useState } from "react";
 
 const testimonials = [
   {
-    name: "Sarah & John Stewart",
-    text: "Marry Gold Films captured our wedding day perfectly. We were blown away by the quality of the photos and the attention to detail that was put into each shot. They truly captured the essence of our special day and we will cherish the photos forever.",
-    image: PHOTOS.TESTIMONIAL[0],
+    name: "Rini & Vishnu",
+    text: `We were absolutely thrilled with the exceptional photography services provided by Mr. Jithin and the team at Marry Gold Films during our special day.
+
+From the initial consultation to the final delivery of our stunning wedding album, Marry Gold Films exceeded our expectations in every way.
+
+Their professionalism, creativity, and attention to detail ensured that every moment of our wedding was beautifully captured. Our families and friends are still raving about the incredible photos!
+
+Five stars isn’t enough—we’d give Marry Gold Films ten stars if we could!`,
   },
   {
-    name: "Anita Thomas",
-    text: "They made me feel completely comfortable during the shoot. The photos turned out so natural and full of emotion — truly timeless memories.",
-    image: PHOTOS.TESTIMONIAL[1],
+    name: "Viswajith & Aiswarya",
+    text: `A huge thank you to the entire crew for the amazing job you did capturing our wedding day.
+
+The photos and videos are absolutely stunning. You truly captured the joy, emotion, and magic of the day.
+
+Every member of the team was professional, kind, and easy to work with. We’ll be recommending Marry Gold Films to anyone looking for the best in the business.`,
   },
   {
-    name: "Priya & Arjun",
-    text: "From concept to final delivery, everything was handled with such professionalism. Every photo tells our story beautifully.",
-    image: PHOTOS.TESTIMONIAL[2],
+    name: "Aiswarya Rakesh",
+    text: `After my engagement shoot, I didn’t have to think twice about choosing Marry Gold Films for my wedding.
+
+The team was highly professional and made us feel comfortable throughout the process. Every special moment was captured beautifully, full of emotion and magic.
+
+A special thanks to Melvin—because of him, I came across Marry Gold Films!`,
+  },
+  {
+    name: "Sandra & Karthik",
+    text: `Marry Gold Films captured so many beautiful, real moments throughout the day.
+
+The photos don’t just look stunning—they tell the story perfectly, from laughter to happy tears.
+
+I’d recommend them in a heartbeat to anyone looking for a talented photographer who’s also a joy to work with.`,
+  },
+  {
+    name: "Rajeev & Sree Lakshmi",
+    text: `Marry Gold Films made our special day truly memorable.
+
+Their communication was excellent, the team was extremely professional, and every priceless moment was captured beautifully.
+
+The album quality is premium and absolutely stunning. We’ll definitely recommend Team MGF to others!`,
+  },
+  {
+    name: "Dr. Jerry & Dr. Divya",
+    text: `The photography team delivered exceptional work from concept to execution.
+
+Their professionalism, punctuality, and artistic vision were impressive. Every shot was thoughtfully composed and beautifully edited.
+
+Special mention to Melvin for making the entire process smooth and stress-free. Highly recommended!`,
   },
 ];
 
-const LandingTestimonial = () => {
+const MAX_HEIGHT = 220; // px – keeps layout stable
+const AUTO_DELAY = 6000;
+
+export default function LandingTestimonial() {
   const [activeIndex, setActiveIndex] = useState(0);
+  const [expanded, setExpanded] = useState(false);
+  const textRef = useRef<HTMLDivElement>(null);
+  const [isOverflowing, setIsOverflowing] = useState(false);
+  const timerRef = useRef<NodeJS.Timeout | null>(null);
 
-  const prevTestimonial = () => {
-    setActiveIndex((prev) => (prev === 0 ? testimonials.length - 1 : prev - 1));
+  const resetTimer = () => {
+    if (timerRef.current) {
+      clearTimeout(timerRef.current);
+    }
+
+    timerRef.current = setTimeout(() => {
+      setActiveIndex((i) => (i + 1) % testimonials.length);
+    }, AUTO_DELAY);
   };
 
-  const nextTestimonial = () => {
-    setActiveIndex((prev) => (prev === testimonials.length - 1 ? 0 : prev + 1));
+  const prev = () => {
+    setExpanded(false);
+    setActiveIndex((i) => (i - 1 + testimonials.length) % testimonials.length);
+    resetTimer();
   };
 
+  const next = () => {
+    setExpanded(false);
+    setActiveIndex((i) => (i + 1) % testimonials.length);
+    resetTimer();
+  };
+
+  // Auto-slide
   useEffect(() => {
-    const interval = setInterval(() => nextTestimonial(), 4000);
-    return () => clearInterval(interval);
+    const timer = setInterval(next, 6000);
+    return () => clearInterval(timer);
   }, []);
 
+  // Detect overflow
+  useEffect(() => {
+    if (textRef.current) {
+      setIsOverflowing(textRef.current.scrollHeight > MAX_HEIGHT);
+    }
+  }, [activeIndex]);
+
   return (
-    <section className="py-24 relative overflow-hidden">
-      <div className="app-container grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
-        {/* LEFT SIDE */}
-        <div>
-          <h2 className="text-4xl font-costaline font-bold text-primary-900 mb-8 max-sm:text-center">
-            Testimonial
-          </h2>
+    <section className="py-28 bg-white">
+      <div className="app-container max-w-3xl mx-auto text-center">
+        <h2 className="text-4xl font-costaline font-bold text-primary-900 mb-16">
+          Testimonials
+        </h2>
 
-          <div className="flex items-start gap-3 mt-20 relative z-10">
-            <Quote
-              className="text-neutral-400 mb-4 transform -translate-y-full -scale-x-100"
-              size={60}
-            />
+        <Quote
+          size={72}
+          className="mx-auto mb-8 text-neutral-300 -scale-x-100"
+        />
 
-            <div>
-              <p
-                key={activeIndex}
-                className="text-neutral-600 leading-relaxed mb-6 transition-opacity duration-700"
-              >
-                {testimonials[activeIndex].text}
-              </p>
-
-              <p className="text-neutral-800 font-medium">
-                {testimonials[activeIndex].name}
-              </p>
-            </div>
+        {/* TEXT CONTAINER */}
+        <div
+          className={`relative transition-opacity duration-500`}
+          key={activeIndex}
+        >
+          <div
+            ref={textRef}
+            className={`text-neutral-600 leading-relaxed whitespace-pre-line px-2
+              ${
+                expanded
+                  ? "max-h-none"
+                  : `max-h-[${MAX_HEIGHT}px] overflow-y-auto`
+              }
+            `}
+            style={!expanded ? { maxHeight: MAX_HEIGHT } : undefined}
+          >
+            {testimonials[activeIndex].text}
           </div>
+
+          {/* SHOW MORE */}
+          {isOverflowing && (
+            <button
+              onClick={() => setExpanded((v) => !v)}
+              className="mt-4 text-sm text-accent-600 hover:underline"
+            >
+              {expanded ? "Show less" : "Show more"}
+            </button>
+          )}
         </div>
 
-        {/* RIGHT SIDE — Responsive Layout */}
-        <div className="flex flex-col items-center gap-6 mt-12 lg:mt-0 w-full">
-          {/* DESKTOP/TABLET - absolute position */}
-          <div className="hidden lg:flex flex-col items-center gap-6 absolute right-0 top-1/2 -translate-y-1/2">
-            {/* Arrow buttons (desktop) */}
-            <div className="flex items-center gap-3 mb-4">
-              <button
-                onClick={prevTestimonial}
-                className="p-2 border rounded-full text-accent-400 hover:text-accent-600 transition"
-              >
-                <ArrowLeft size={20} />
-              </button>
-              <button
-                onClick={nextTestimonial}
-                className="p-2 border rounded-full text-accent-400 hover:text-accent-600 transition"
-              >
-                <ArrowRight size={20} />
-              </button>
-            </div>
+        {/* NAME */}
+        <p className="mt-6 font-medium text-neutral-800">
+          — {testimonials[activeIndex].name}
+        </p>
 
-            {/* Image carousel */}
-            <div className="flex items-center justify-end gap-3">
-              {testimonials.map((item, i) => (
-                <div
-                  key={i}
-                  className={`relative overflow-hidden transition-all duration-500 h-40 ${
-                    i === activeIndex ? "opacity-100 w-48" : "opacity-50 w-28"
-                  }`}
-                >
-                  <Image
-                    src={item.image}
-                    alt={item.name}
-                    fill
-                    className="object-cover"
-                  />
-                </div>
-              ))}
-            </div>
-          </div>
+        {/* NAVIGATION */}
+        <div className="flex items-center justify-center gap-6 mt-10">
+          <button
+            onClick={prev}
+            className="p-3 rounded-full border text-accent-400 hover:text-accent-600 transition"
+            aria-label="Previous testimonial"
+          >
+            <ArrowLeft size={20} />
+          </button>
 
-          {/* MOBILE layout — stacked below text */}
-          <div className="flex flex-col lg:hidden items-center justify-center gap-4 w-full">
-            <div className="flex items-center justify-center gap-3">
-              {testimonials.map((item, i) => (
-                <div
-                  key={i}
-                  className={`relative overflow-hidden transition-all duration-500 h-40  ${
-                    i === activeIndex ? "opacity-100 w-44" : "opacity-50 w-28"
-                  }`}
-                >
-                  <Image
-                    src={item.image}
-                    alt={item.name}
-                    fill
-                    className="object-cover"
-                  />
-                </div>
-              ))}
-            </div>
+          <button
+            onClick={next}
+            className="p-3 rounded-full border text-accent-400 hover:text-accent-600 transition"
+            aria-label="Next testimonial"
+          >
+            <ArrowRight size={20} />
+          </button>
+        </div>
 
-            <div className="flex items-center gap-3">
-              <button
-                onClick={prevTestimonial}
-                className="p-2 border rounded-full text-accent-400 hover:text-accent-600 transition"
-              >
-                <ArrowLeft size={20} />
-              </button>
-
-              <button
-                onClick={nextTestimonial}
-                className="p-2 border rounded-full text-accent-400 hover:text-accent-600 transition"
-              >
-                <ArrowRight size={20} />
-              </button>
-            </div>
-          </div>
+        {/* COUNTER */}
+        <div className="mt-6 text-sm text-neutral-400">
+          {activeIndex + 1} / {testimonials.length}
         </div>
       </div>
     </section>
   );
-};
-
-export default LandingTestimonial;
+}

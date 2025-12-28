@@ -10,6 +10,7 @@ const LandingSchedule = () => {
         backgroundImage:
           "linear-gradient(to bottom, rgba(255,255,255,0.5), rgba(255,255,255,0.4)), url(/assets/images/schedule.webp)",
       }}
+      id="contact"
     >
       <div className="app-container">
         <header className="capitalize flex items-start flex-wrap mx-auto justify-between gap-6 text-accent-800 text-shadow-2xl">

@@ -1,5 +1,6 @@
 import { BRAND_NAME } from "@/utils/consts";
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 
 const Navbar = () => {
@@ -17,8 +18,12 @@ const Navbar = () => {
           <h1 className="text-3xl font-costaline">{BRAND_NAME}</h1>
         </main>
         <ul className="flex text-primary-50/70 gap-3">
-          <li>Gallery</li>
-          <li>Contact</li>
+          <li>
+            <Link href={"#works"}>Works</Link>
+          </li>
+          <li>
+            <Link href={"#contact"}>Contact</Link>
+          </li>
         </ul>
       </div>
     </nav>

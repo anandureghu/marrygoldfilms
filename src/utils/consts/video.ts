@@ -1,3 +1,10 @@
 export const VIDEOS = {
-  ABOUT_US: "https://www.pexels.com/download/video/8776126/",
+  ABOUT_US: [
+    "/assets/videos/about-1.webm",
+    "/assets/videos/about-2.webm",
+    "/assets/videos/about-3.webm",
+    "/assets/videos/about-4.webm",
+    "/assets/videos/about-5.webm",
+    "/assets/videos/about-6.webm",
+  ],
 };

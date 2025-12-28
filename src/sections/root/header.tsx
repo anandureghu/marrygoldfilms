@@ -1,12 +1,13 @@
 import { BRAND_NAME } from "@/utils/consts";
 import { PHOTOS } from "@/utils/consts/photos";
+import Link from "next/link";
 import React from "react";
 
 const LandingHeader = () => {
   return (
     <header className="h-screen relative">
       <div
-        className="absolute w-full h-full top-0 left-0 bg-cover"
+        className="absolute w-full h-full top-0 left-0 bg-cover bg-bottom bg-no-repeat"
         style={{
           backgroundImage: `linear-gradient(to bottom, rgba(0,0,0,0.7), rgba(0,0,0,0.4)), url('${PHOTOS.HEADER}')`,
         }}
@@ -21,9 +22,11 @@ const LandingHeader = () => {
             a team of passionate photographers <br /> dedicated to capturing
             life&apos;s <br />
             precious moments
-            <button className="block bg-primary-950 p-3 px-7 mt-4 capitalize">
-              book a session now
-            </button>
+            <Link href={"#contact"}>
+              <button className="block bg-primary-950 p-3 px-7 mt-4 capitalize">
+                book a session now
+              </button>
+            </Link>
           </div>
         </div>
       </main>

@@ -5,6 +5,7 @@ import { ArrowLeft, ArrowRight } from "lucide-react";
 import Image from "next/image";
 import { LATEST_PROJECTS } from "@/utils/consts";
 import { cn } from "@/utils/utils";
+import Link from "next/link";
 
 const LandingLatestProjects = () => {
   const scrollRef = useRef<HTMLDivElement>(null);
@@ -21,7 +22,10 @@ const LandingLatestProjects = () => {
   };
 
   return (
-    <section className="bg-[#6b6054] py-16 text-white relative overflow-hidden">
+    <section
+      className="bg-[#6b6054] py-16 text-white relative overflow-hidden"
+      id="works"
+    >
       <div className="app-container">
         {/* Header */}
         <div className="flex justify-between items-center mb-6 max-md:flex-col gap-3">
@@ -54,41 +58,36 @@ const LandingLatestProjects = () => {
         className="flex overflow-x-auto scroll-smooth scrollbar-hide no-scrollbar ml-[10%]"
       >
         {LATEST_PROJECTS.map((project, i) => (
-          <div
-            key={project.id}
-            onMouseEnter={() => setActive(i)}
-            onTouchStart={() => setActive(i)}
-            className={cn(
-              "relative overflow-hidden transition-all duration-500 transform",
-              // 👇 Responsive widths
-              "min-w-[80vw] sm:min-w-[60vw] md:min-w-[400px] lg:min-w-[300px]",
-              active === i && "md:min-w-[500px] lg:min-w-[600px] z-20"
-            )}
-          >
-            {/* Left Shadow Layer */}
-            <div className="absolute left-0 top-0 h-full w-12 bg-gradient-to-r from-black/40 to-transparent z-10 pointer-events-none" />
+          <Link href={`/wedding/${project.client}`} key={project.id}>
+            <div
+              onMouseEnter={() => setActive(i)}
+              onTouchStart={() => setActive(i)}
+              className={cn(
+                "relative overflow-hidden transition-all duration-500 transform",
+                // 👇 Responsive widths
+                "min-w-[80vw] sm:min-w-[60vw] md:min-w-[400px] lg:min-w-[300px]",
+                active === i && "md:min-w-[500px] lg:min-w-[600px] z-20"
+              )}
+            >
+              {/* Left Shadow Layer */}
+              <div className="absolute left-0 top-0 h-full w-12 bg-gradient-to-r from-black/40 to-transparent z-10 pointer-events-none" />
 
-            {/* Image */}
-            <Image
-              src={project.image}
-              alt={project.title}
-              width={600}
-              height={450}
-              className="object-cover w-full h-[400px] sm:h-[420px] md:h-[450px]"
-            />
+              {/* Image */}
+              <Image
+                src={project.image}
+                alt={project.client}
+                width={600}
+                height={450}
+                className="object-cover w-full h-[400px] sm:h-[420px] md:h-[450px]"
+              />
 
-            {/* Overlay */}
-            <div className="absolute inset-0 bg-black/30 hover:bg-black/50 transition-all duration-300 flex flex-col justify-end p-6 z-20">
-              <p className="text-sm text-gray-200">{project.id}</p>
-              <p className="text-xs uppercase tracking-wide text-gray-300 mt-1">
-                {project.category}
-              </p>
-              <h3 className="text-lg font-semibold mt-1 font-costaline">
-                {project.title}
-              </h3>
-              <p className="text-sm text-gray-300">{project.client}</p>
+              {/* Overlay */}
+              <div className="absolute inset-0 bg-black/30 hover:bg-black/50 transition-all duration-300 flex flex-col justify-end p-6 z-20">
+                <p className="text-sm text-gray-200">{project.id}</p>
+                <p className="text-2xl text-gray-300">{project.client}</p>
+              </div>
             </div>
-          </div>
+          </Link>
         ))}
       </div>
 
