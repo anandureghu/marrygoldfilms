@@ -22,7 +22,7 @@ const LandingSchedule = () => {
             <h2>
               Choose your service and date and let{" "}
               <span className="font-costaline font-bold">{BRAND_NAME}</span>{" "}
-              Help you create Beautiful memmories
+              Help you create Beautiful memories
             </h2>
             <BookingForm />
           </div>

@@ -80,7 +80,8 @@ const LandingLatestProjects = () => {
                 height={450}
                 className={cn(
                   "object-cover w-full h-[400px] sm:h-[420px] md:h-[450px]",
-                  i == 0 ? "object-[50%_10%]" : "object-center"
+                  i == 0 ? "object-[50%_10%]" : "object-center",
+                  [3].includes(i) ? "scale-125" : "scale-100" // scaling for white bordered images
                 )}
               />
 
