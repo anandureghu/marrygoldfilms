@@ -82,9 +82,13 @@ const LandingLatestProjects = () => {
               />
 
               {/* Overlay */}
-              <div className="absolute inset-0 bg-black/30 hover:bg-black/50 transition-all duration-300 flex flex-col justify-end p-6 z-20">
-                <p className="text-sm text-gray-200">{project.id}</p>
-                <p className="text-2xl text-gray-300">{project.client}</p>
+              <div className="absolute inset-0  transition-all duration-300 flex flex-col justify-end p-6 z-20">
+                <p className="text-sm text-gray-200">
+                  {i < 9 ? `0${i + 1}` : i + 1}
+                </p>
+                <p className="text-2xl text-white text-shadow-2xl">
+                  {project.client}
+                </p>
               </div>
             </div>
           </Link>
@@ -92,7 +96,7 @@ const LandingLatestProjects = () => {
       </div>
 
       {/* Left fade overlay */}
-      <div className="absolute left-0 top-0 h-full w-20 bg-gradient-to-r from-[#6b6054] to-transparent pointer-events-none" />
+      <div className="absolute left-0 top-0 h-full w-20 bg-gradient-to-r from-[#6b5454] to-transparent pointer-events-none" />
     </section>
   );
 };

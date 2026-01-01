@@ -36,6 +36,23 @@ export const SERVICES = [
 
 export const LATEST_PROJECTS = [
   {
+    id: "07",
+    client: "VINU & SNEHA",
+    image:
+      "/assets/images/christian-wedding/VINU & SNEHA/AE9AB7D9-9D35-4163-B9C6-A826643D7F79.webp",
+    all_images: [
+      "/assets/images/christian-wedding/VINU & SNEHA/0E5CE4F1-CEC0-433E-B546-CAA8E7BFC583.webp",
+      "/assets/images/christian-wedding/VINU & SNEHA/4F7B760B-2B70-4BFE-94FC-164B0EB84E3E.webp",
+      "/assets/images/christian-wedding/VINU & SNEHA/7BFBA492-94CA-4B72-985F-71FBC9BFF88A.webp",
+      "/assets/images/christian-wedding/VINU & SNEHA/545F4D54-74FA-4D72-8F67-3871007BC1A8.webp",
+      "/assets/images/christian-wedding/VINU & SNEHA/AE9AB7D9-9D35-4163-B9C6-A826643D7F79.webp",
+      "/assets/images/christian-wedding/VINU & SNEHA/B114CA70-4D68-4355-8605-DFB0938D6D88.webp",
+      "/assets/images/christian-wedding/VINU & SNEHA/C5C1C167-B6F3-4A64-93EF-7C88A4F7CE0B.webp",
+      "/assets/images/christian-wedding/VINU & SNEHA/DAC4EE76-331A-4436-9D00-8FAEE57F069C.webp",
+      "/assets/images/christian-wedding/VINU & SNEHA/E150F7B5-DC92-4FAD-A258-9594408404C9.webp",
+    ],
+  },
+  {
     id: "01",
     client: "Albin & Rini",
     image: "/assets/images/christian-wedding/albin-rini/albin-rini-1.webp",
@@ -123,23 +140,6 @@ export const LATEST_PROJECTS = [
       "/assets/images/christian-wedding/NELDA & ROMARIO/ANI09097.webp",
       "/assets/images/christian-wedding/NELDA & ROMARIO/ANI09591.webp",
       "/assets/images/christian-wedding/NELDA & ROMARIO/ED_00838.webp",
-    ],
-  },
-  {
-    id: "07",
-    client: "VINU & SNEHA",
-    image:
-      "/assets/images/christian-wedding/VINU & SNEHA/4F7B760B-2B70-4BFE-94FC-164B0EB84E3E.webp",
-    all_images: [
-      "/assets/images/christian-wedding/VINU & SNEHA/0E5CE4F1-CEC0-433E-B546-CAA8E7BFC583.webp",
-      "/assets/images/christian-wedding/VINU & SNEHA/4F7B760B-2B70-4BFE-94FC-164B0EB84E3E.webp",
-      "/assets/images/christian-wedding/VINU & SNEHA/7BFBA492-94CA-4B72-985F-71FBC9BFF88A.webp",
-      "/assets/images/christian-wedding/VINU & SNEHA/545F4D54-74FA-4D72-8F67-3871007BC1A8.webp",
-      "/assets/images/christian-wedding/VINU & SNEHA/AE9AB7D9-9D35-4163-B9C6-A826643D7F79.webp",
-      "/assets/images/christian-wedding/VINU & SNEHA/B114CA70-4D68-4355-8605-DFB0938D6D88.webp",
-      "/assets/images/christian-wedding/VINU & SNEHA/C5C1C167-B6F3-4A64-93EF-7C88A4F7CE0B.webp",
-      "/assets/images/christian-wedding/VINU & SNEHA/DAC4EE76-331A-4436-9D00-8FAEE57F069C.webp",
-      "/assets/images/christian-wedding/VINU & SNEHA/E150F7B5-DC92-4FAD-A258-9594408404C9.webp",
     ],
   },
   {
