@@ -37,13 +37,14 @@ const AboutVideos = () => {
     <div className="relative flex-1 w-1/2 max-lg:w-3/4 max-md:w-full mx-auto h-[300px]">
       <video
         ref={videoRef}
-        key={VIDEOS.ABOUT_US[current]}
-        autoPlay
         muted
         playsInline
+        autoPlay
+        preload="metadata"
         className="w-full h-auto rounded-lg"
       >
-        <source src={VIDEOS.ABOUT_US[current]} type="video/mp4" />
+        <source src={VIDEOS.ABOUT_US[current].mp4} type="video/mp4" />
+        <source src={VIDEOS.ABOUT_US[current].webm} type="video/webm" />
       </video>
 
       {/* LEFT ARROW */}

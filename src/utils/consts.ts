@@ -7,7 +7,7 @@ export const SERVICES = [
   {
     title: "Christian wedding",
     image: PHOTOS.OUR_SERVICES[0],
-    position: "object-center",
+    position: "object-[50%_10%]",
   },
   {
     title: "Hindu Wedding",
@@ -17,7 +17,7 @@ export const SERVICES = [
   {
     title: "Muslim wedding",
     image: PHOTOS.OUR_SERVICES[2],
-    position: "object-center",
+    position: "position: object-[50%_35%]",
   },
   {
     title: "Pre wedding",

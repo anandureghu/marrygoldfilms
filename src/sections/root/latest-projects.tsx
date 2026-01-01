@@ -78,7 +78,10 @@ const LandingLatestProjects = () => {
                 alt={project.client}
                 width={600}
                 height={450}
-                className="object-cover w-full h-[400px] sm:h-[420px] md:h-[450px]"
+                className={cn(
+                  "object-cover w-full h-[400px] sm:h-[420px] md:h-[450px]",
+                  i == 0 ? "object-[50%_10%]" : "object-center"
+                )}
               />
 
               {/* Overlay */}
